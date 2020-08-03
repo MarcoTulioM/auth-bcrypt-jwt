@@ -1,0 +1,37 @@
+### Authorization:
+GET http://localhost:3333/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibG9naW4iLCJpYXQiOjE1OTQxNjQwNzUsImV4cCI6MTU5NDE2NTg3NX0.XTHVpN8Do11_OzRbBtkX7Iy05GRPIixrrEx-mdnINv8
+
+### Create User:
+POST http://localhost:3333/users
+Content-Type: application/json 
+
+{
+    "name": "login",
+    "password": "password"
+}
+
+### Login (accessToken & refreshToken):
+POST http://localhost:3333/users/login
+Content-Type: application/json 
+
+{
+    "name": "login",
+    "password": "password"
+}
+
+### Refresh Token:
+POST http://localhost:4000/refresh_token
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibG9naW4iLCJpYXQiOjE1OTQxNjQwNzV9.7UX28jgHzfVQolIhTRI4xHB2qNrX46YIvKmX81nNcOg"
+}
+
+### Logout:
+DELETE http://localhost:4000/logout
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibG9naW4iLCJpYXQiOjE1OTQxNjcwNTV9.5ZT4PbV9S3s5U0TCuiPGz74aW1ZsfWnqc0O2gLOnt5c"
+}
